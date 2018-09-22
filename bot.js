@@ -417,7 +417,8 @@ client.on('message', message => {
 .addField('     ** *server ** ' ,' **لمعرفة معلومات السيرفر**')
 .addField('     ** **  ' ,' ** ** ')
 .addField('**لدعوة البوت لسيرفرك ..**' , '**http://cutt.us/P8eIJ**')
-.addField('     ** لسه باقي اوامر ** ')
+.addField('     **https://discord.gg/Mwyp8d8**  ' ,' **سيرفر الدعم الفني** ')
+
 .setColor('RANDOM')
   message.channel.sendEmbed(embed);
     }
