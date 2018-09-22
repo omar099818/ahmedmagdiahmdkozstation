@@ -63,6 +63,17 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('لي�
 //newcode
 
 client.on("message", function(message) {
+    if (message.content === "*inv") {
+    return message.reply("http://cutt.us/P8eIJ")
+    .catch(console.error);
+    }
+
+}); 
+
+
+//newcode
+
+client.on("message", function(message) {
     if (message.content === "*support") {
     return message.reply("https://discord.gg/Mwyp8d8")
     .catch(console.error);
@@ -132,12 +143,6 @@ client.on('message', function(msg) {
   });
 //newcode
 
-client.on('message', msg => {
-  if(msg.content === '*inv')
-              setTimeout(function() {  
-msg.reply('http://cutt.us/P8eIJ')
-              }, 10000)
-});
 
 //newcode
 
@@ -420,22 +425,18 @@ client.on('message', message => {
 
 //newcode
 
+
+
+//newchat
+
 client.on("message", function(message) {
     if (message.content === "هلا") {
-    return message.reply("هلا بك ياقلبي منورنا")
+    return message.reply("هلا بك يابعد عمري منورنا")
     .catch(console.error);
     }
 
 }); 
 
-//newchat
-
-client.on('message', msg => {
-  if(msg.content === '*support')
-              setTimeout(function() {  
-msg.reply('https://discord.gg/Mwyp8d8')
-              }, 10000)
-});
 
 //newcode
 
