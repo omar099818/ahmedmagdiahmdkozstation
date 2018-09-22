@@ -30,7 +30,7 @@ client.user.setGame(`test`,"http://twitch.tv/S-F")
 
 //newcode
 
-lient.on('message', async message => { // Alpha Codes Server.
+Client.on('message', async message => { // Alpha Codes Server.
     if(message.author.bot) return;
     if(message.channel.type === 'dm') return;
  
