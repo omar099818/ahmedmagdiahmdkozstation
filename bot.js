@@ -262,4 +262,23 @@ client.on('message', async message => { // Alpha Codes Server.
 
 //newcode
 
+client.on('message', message => {
+     if (message.content === "*help") {
+     let embed = new Discord.RichEmbed()
+.setThumbnail(message.author.avatarURL)
+.addField('     **اوامر عامه** ' ,' **الاوامر العامه الخاصه ب الزاور** ')
+.addField('     ** **  ' ,' ** ** ')
+.addField('     ** *support **  ' ,' **لسيرفر الدعم الفني** ')
+.addField('     ** *inv **  ' ,' **لدعوة البوت لسيرفرك** ')
+.addField('     ** *id **  ' ,' **لمعرفة معلوماتك الخاصه** ')
+.addField('     ** *server ** ' ,' **لمعرفة معلومات السيرفر**')
+.addField('     ** **  ' ,' ** ** ')
+.addField('**لدعوة البوت لسيرفرك ..**' , '**http://cutt.us/P8eIJ**')
+.addField('     ** لسه باقي اوامر ** ')
+.setColor('RANDOM')
+  message.channel.sendEmbed(embed);
+    }
+});
+
+//newcode
 client.login(process.env.BOT_TOKEN);
