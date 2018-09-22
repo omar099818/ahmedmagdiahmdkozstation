@@ -281,4 +281,14 @@ client.on('message', message => {
 });
 
 //newcode
+
+client.on('message', message=> {
+    if (message.author.bot) return;
+    if (message.isMentioned(client.user))
+    {
+    message.reply("*help هلا !! امرني اذا تحتاج اي مساعده اكتب ");
+    }
+});
+
+//newcode
 client.login(process.env.BOT_TOKEN);
