@@ -64,7 +64,7 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('لي�
 
 client.on("message", function(message) {
     if (message.content === "*inv") {
-    return message.reply("http://cutt.us/P8eIJ")
+    return message.reply("http://cutt.us/P8eIJ ~ اضغط علي الرابط لأضافة البوت")
     .catch(console.error);
     }
 
