@@ -282,6 +282,36 @@ client.on('message', message => {
 
 //newcode
 
+client.on("message", function(message) {
+    if (message.content === "هلا") {
+    return message.reply("هلا بك ياقلبي منورنا")
+    .catch(console.error);
+    }
+
+}); 
+
+//newcode
+
+client.on('message', message => {
+     if (message.content === "*help") {
+     let embed = new Discord.RichEmbed()
+.setThumbnail(message.author.avatarURL)
+.addField('     **اوامر اداريه** ' ,' **الاومر الخاصه ب الادمنيه** ')
+.addField('     ** **  ' ,' ** ** ')
+.addField('     ** *bc **  ' ,' **ل ارسال رسالة لجميع اعضاء السيرفر** ')
+.addField('     ** *send **  ' ,' **ل عمل تصويت ب روم ** ')
+.addField('     ** *user **  ' ,' **لعمل روم يكتب كم عضو ب السيرفر** ')
+.addField('     ** *mute **  ' ,' **لعمل ميوت كتابي لحد** ')
+.addField('     ** *unmute ** ' ,' **لفك الميوت الكتابي** ')
+.addField('     ** **  ' ,' ** ** ')
+.addField('**لدعوة البوت لسيرفرك ..**' , '**http://cutt.us/P8eIJ**')
+.setColor('RANDOM')
+  message.channel.sendEmbed(embed);
+    }
+});
+
+//newcode
+
 client.on('message', message=> {
     if (message.author.bot) return;
     if (message.isMentioned(client.user))
