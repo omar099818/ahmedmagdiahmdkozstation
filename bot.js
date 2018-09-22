@@ -29,12 +29,12 @@ client.on('ready', () => {
 //newcode
 
 client.on('message', message => {
-    if (message.content.split(' ')[0] == '*nbc')
+    if (message.content.split(' ')[0] == 'nbc')
        message.guild.members.forEach( member => {
          if (!message.member.hasPermission("ADMINISTRATOR"))  return;
 
 
-           member.send(message.content.substr(3));
+member.send(message.content.substr(3));
                                                       message.delete();
             
                                                     });
