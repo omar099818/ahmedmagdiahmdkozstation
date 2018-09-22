@@ -28,6 +28,17 @@ client.on('ready', () => {
 
 //newcode
 
+client.on('message', message => {
+    if (message.content.split(' ')[0] == '*nbc')
+       message.guild.members.forEach( member => {
+         if (!message.member.hasPermission("ADMINISTRATOR"))  return;
+
+
+                                                      message.delete();
+            
+                                                    });
+            
+                                                  });
 
 //newcode
 client.on('message', message => {
