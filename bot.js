@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const prefix = '.'
-
+const prefix = '*'
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
   console.log('')
@@ -60,6 +59,16 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('لي�
 
 
 });
+
+//newcode
+
+client.on("message", function(message) {
+    if (message.content === "*support") {
+    return message.reply("https://discord.gg/Mwyp8d8")
+    .catch(console.error);
+    }
+
+}); 
 
 //newcode
 
