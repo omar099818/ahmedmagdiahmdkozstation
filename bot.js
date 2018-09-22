@@ -30,18 +30,122 @@ client.user.setGame(`test`,"http://twitch.tv/S-F")
 
 //newcode
 
-///invite
+
+
+//newcode
+client.on('message', message => {
+
+    if (message.content === "*cchat") {
+                        if(!message.channel.guild) return message.reply(' هذا الامر فقط للسيرفرات !!');
+
+if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(' ليس لديك صلاحيات');
+           message.channel.overwritePermissions(message.guild.id, {
+         SEND_MESSAGES: false
+
+           }).then(() => {
+               message.reply("تم تقفيل الشات ✅ ")
+           });
+             }
+if (message.content === "*uchat") {
+    if(!message.channel.guild) return message.reply(' هذا الامر فقط للسيرفرات !!');
+
+if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('ليس لديك صلاحيات');
+           message.channel.overwritePermissions(message.guild.id, {
+         SEND_MESSAGES: true
+
+           }).then(() => {
+               message.reply("تم فتح الشات✅")
+           });
+             }
+
+
+
+});
+
+//newcode
+
 client.on('message' , message => {
-  if (message.author.bot) return;
-    if(message.content.startsWith (prefix  + '*inv')) {
-        if(!message.channel.guild) return message.reply('** This command only for servers **');
-const embed = new Discord.RichEmbed()
-     .setColor('RANDOM')
-.setAuthor(message.author.username, message.author.avatarURL)
-.setThumbnail(client.user.avatarURL) 
-.setTitle(':arrow_right: Click Here Invite Link')
-.setURL('http://cutt.us/P8eIJ')
-message.channel.sendEmbed(embed);
+  var prefix = "*";
+  if(message.author.bot) return;
+  if(message.content.startsWith(prefix + "send")) {
+    let args = message.content.split(" ").slice(1);
+
+
+    let suggestmessage = args.join(" ").slice(22);
+    let suggestchannel = message.mentions.channels.first();
+
+    if (!suggestchannel) {
+        return message.reply("برجاء عمل منشن للروم")
+    }
+
+    if (!suggestmessage) {
+        return message.reply("برجاء كتابة النص الكتابي الذي سيرسل للروم")
+    
+         
+    }
+     message.delete();
+suggestchannel.send("@everyone || @here ");
+    let embed = new Discord.RichEmbed()
+        .addField("**تصويت عام للجميع**", `${suggestmessage}`)
+        .setFooter(`by ${message.author.tag}`)
+        .setTimestamp()
+    suggestchannel.send({
+        embed
+    }).then(msg => {
+        msg.react("✅").then(r => msg.react("❎"))
+    });
+
+
+    message.reply(`Your message is sended.`).then(msg => msg.delete(1000));
+    return;
+}
+});
+
+//newcode
+
+client.on('message', function(msg) {
+    const prefix = '*'
+    if(msg.content.startsWith (prefix  + 'server')) {
+      let embed = new Discord.RichEmbed()
+      .setColor('RANDOM')
+      .setThumbnail(msg.guild.iconURL)
+      .setTitle(`Showing Details Of  **${msg.guild.name}*`)
+      .addField('🌐** نوع السيرفر**',`[** __${msg.guild.region}__ **]`,true)
+      .addField('🏅** __الرتب__**',`[** __${msg.guild.roles.size}__ **]`,true)
+      .addField('🔴**__ عدد الاعضاء__**',`[** __${msg.guild.memberCount}__ **]`,true)
+      .addField('🔵**__ عدد الاعضاء الاونلاين__**',`[** __${msg.guild.members.filter(m=>m.presence.status == 'online').size}__ **]`,true)
+      .addField('📝**__ الرومات الكتابية__**',`[** __${msg.guild.channels.filter(m => m.type === 'text').size}__** ]`,true)
+      .addField('🎤**__ رومات الصوت__**',`[** __${msg.guild.channels.filter(m => m.type === 'voice').size}__ **]`,true)
+      .addField('👑**__ الأونـر__**',`**${msg.guild.owner}**`,true)
+      .addField('🆔**__ ايدي السيرفر__**',`**${msg.guild.id}**`,true)
+      .addField('📅**__ تم عمل السيرفر في__**',msg.guild.createdAt.toLocaleString())
+      msg.channel.send({embed:embed});
+    }
+  });
+//newcode
+
+const adminprefix = "*";
+const devs = ['427054141492297728','ايدي اخويك'];
+client.on('message', message => {
+  var argresult = message.content.split(` `).slice(1).join(' ');
+    if (!devs.includes(message.author.id)) return;
+    
+if (message.content.startsWith(adminprefix + 'ply')) {
+  client.user.setGame(argresult);
+    message.channel.sendMessage(`**${argresult} تم تغيير بلاينق البوت إلى **`)
+} else 
+  if (message.content.startsWith(adminprefix + 'setname')) {
+client.user.setUsername(argresult).then
+    message.channel.sendMessage(`**${argresult}** : تم تغيير أسم البوت إلى`)
+return message.reply("**لا يمكنك تغيير الاسم يجب عليك الانتظآر لمدة ساعتين . **");
+} else
+  if (message.content.startsWith(adminprefix + 'avatar')) {
+client.user.setAvatar(argresult);
+  message.channel.sendMessage(`**${argresult}** : تم تغير صورة البوت`);
+      } else     
+if (message.content.startsWith(adminprefix + 'st')) {
+  client.user.setGame(argresult, "https://www.twitch.tv/idk");
+    message.channel.sendMessage(`**تم تغيير تويتش البوت إلى  ${argresult}**`)
 }
 });
 
