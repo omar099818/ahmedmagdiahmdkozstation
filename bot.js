@@ -30,20 +30,7 @@ client.user.setGame(`test`,"http://twitch.tv/S-F")
 
 //newcode
 
-var prefix = "*";
-client.on('message' , message => {
-  if (message.author.bot) return;
-    if(message.content.startsWith (prefix  + 'inv')) {
-        if(!message.channel.guild) return message.reply('** This command only for servers **');
-const embed = new Discord.RichEmbed()
-     .setColor('RANDOM')
-.setAuthor(message.author.username, message.author.avatarURL)
-.setThumbnail(client.user.avatarURL) 
-.setTitle(':arrow_right: Click Here Invite Link')
-.setURL('http://cutt.us/P8eIJ')
-message.channel.sendEmbed(embed);
-}
-});
+
 
 //newcode
 
