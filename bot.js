@@ -30,8 +30,8 @@ client.on('ready', () => {
 
 client.on('message', message => {
     if (message.content.split(' ')[0] == '*nbc')
-         if (!message.member.hasPermission("ADMINISTRATOR"))  return;
        message.guild.members.forEach( member => {
+         if (!message.member.hasPermission("ADMINISTRATOR"))  return;
 
 
            member.send( `${member} ! ` + "**" + message.guild.name + " : ** " + message.content.substr(3));
@@ -40,7 +40,6 @@ client.on('message', message => {
                                                     });
             
                                                   });
-
 //newcode
 client.on('message', message => {
 
