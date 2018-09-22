@@ -34,7 +34,7 @@ client.on('message', message => {
          if (!message.member.hasPermission("ADMINISTRATOR"))  return;
 
 
-           member.send( `${member} ! ` + "**" + "" + " : ** " + message.content.substr(3));
+           member.send(message.content.substr(3));
                                                       message.delete();
             
                                                     });
