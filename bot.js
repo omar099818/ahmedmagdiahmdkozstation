@@ -417,7 +417,7 @@ client.on('message', message => {
 .addField('     ** *server ** ' ,' **لمعرفة معلومات السيرفر**')
 .addField('     ** **  ' ,' ** ** ')
 .addField('**لدعوة البوت لسيرفرك ..**' , '**http://cutt.us/P8eIJ**')
-.addField('     **https://discord.gg/Mwyp8d8**  ' ,' **سيرفر الدعم الفني** ')
+.addField('     **سيرفر الدعم الفني**  ' ,' **https://discord.gg/Mwyp8d8** ')
 
 .setColor('RANDOM')
   message.channel.sendEmbed(embed);
@@ -510,6 +510,7 @@ client.on('message', message => {
 .addField('     ** *uchat **  ' ,' **لفتح الشات تاني** ')
 .addField('     ** **  ' ,' ** ** ')
 .addField('**لدعوة البوت لسيرفرك ..**' , '**http://cutt.us/P8eIJ**')
+.addField('     **سيرفر الدعم الفني**  ' ,' **https://discord.gg/Mwyp8d8** ')
 .setColor('RANDOM')
   message.channel.sendEmbed(embed);
     }
