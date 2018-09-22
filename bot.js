@@ -28,7 +28,34 @@ client.on('ready', () => {
 
 //newcode
 
+client.on('message', message => {
+   if (message.author.bot) return;
+    if (message.content === "fhelp") {
+              if(!message.channel.guild) return message.reply(':x:  **The orders are not in your الاوامر مو فى **');
+ const embed = new Discord.RichEmbed()
+         .setColor("#efa800")
+                   .setAuthor(message.author.username, message.author.avatarURL)
+          .setThumbnail(message.author.avatarURL)
+                .setTimestamp()
+   .setDescription(`
+                                                    
+**fplay <name> / To Play The Song
 
+fstop / To Stop The Song
+
+fskip / To Skip The Song
+
+fvol <number> / To Change Volume
+
+fpause / To Pause The Song
+
+fresume / To Resume The Song
+**
+`);
+
+     message.channel.send({embed});
+   }
+});
 
 //newcode
 client.on('message', message => {
