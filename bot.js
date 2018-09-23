@@ -29,7 +29,7 @@ client.on('ready', () => {
 //newcode
 
 client.on('message', function(message) {
-        var prefix = "**";
+        var prefix = "*";
         var Color = ['bff442','f4d941','ea3c62','ffffff']
         if (message.content.startsWith(prefix + 'bot')) {
             var alpha= new Discord.RichEmbed()
@@ -66,7 +66,7 @@ client.on('message', message => {
 //newcode
 
 client.on('message', message => {
-if(message.content == '*bot') {
+if(message.content == 'ssbot') {
          if(!message.author.id === '427054141492297728') return;
 var gimg;
 var gname;
@@ -491,7 +491,9 @@ client.on('message', message => {
 .addField('     ** *inv **  ' ,' **لدعوة البوت لسيرفرك** ')
 .addField('     ** *id **  ' ,' **لمعرفة معلوماتك الخاصه** ')
 .addField('     ** *server ** ' ,' **لمعرفة معلومات السيرفر**')
-.addField('     ** **  ' ,' ** ** ')
+.addField('     ** *ping **  ' ,' **لمعرفة سرعة البوت**')
+.addField('     ** *bot **  ' ,' **لمعرفة البوت بكم ** ')
+.addField('     ** ** ',' ** ** ')
 .addField('**لدعوة البوت لسيرفرك ..**' , '**http://cutt.us/P8eIJ**')
 .addField('     **سيرفر الدعم الفني**  ' ,' **https://discord.gg/Mwyp8d8** ')
 
