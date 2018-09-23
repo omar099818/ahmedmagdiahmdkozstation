@@ -1,6 +1,8 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const prefix = '*'
+const prefix = '*';
+
+
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
   console.log('')
@@ -28,7 +30,27 @@ client.on('ready', () => {
 
 //newcode
 
-
+client.on('message', message => {
+    if (message.content.startsWith("*avatar")) {
+        if (message.author.bot) return
+        var mentionned = message.mentions.users.first();
+    var omar;
+      if(mentionned){
+          var omar = mentionned;
+      } else {
+          var omar = message.author;
+          
+      }
+        const embed = new Discord.RichEmbed()
+        .setColor("RANDOM")
+        .setAuthor('Avatar Link :')
+        .setTitle('Click Here')
+        .setURL(`${omar.avatarURL}`)
+        .setImage(`${omar.avatarURL}`)
+        .setFooter('✽ GMZN Community ',client.user.avatarURL) 
+      message.channel.sendEmbed(embed);
+    }
+});
 
 //newcode
 
@@ -982,7 +1004,6 @@ client.on('message', message => {
 .addField('     ** *server ** ' ,' **لمعرفة معلومات السيرفر**')
 .addField('     ** *ping **  ' ,' **لمعرفة سرعة البوت**')
 .addField('     ** *bot **  ' ,' **لمعرفة البوت بكم ** ')
-.addField('     ** ** ',' ** ** ')
 .addField('**لدعوة البوت لسيرفرك ..**' , '**http://cutt.us/P8eIJ**')
 .addField('     **سيرفر الدعم الفني**  ' ,' **https://discord.gg/Mwyp8d8** ')
 
