@@ -28,6 +28,31 @@ client.on('ready', () => {
 
 //newcode
 
+client.on('message', message => {
+if(message.content == '*bot') {
+         if(!message.author.id === '427054141492297728') return;
+var gimg;
+var gname;
+var gmemb;
+var gbots;
+var groles;
+var servers = client.guilds;
+servers.forEach((g)=>{
+gname = g.name;
+gimg = g.iconURL;
+gmemb = g.members.size;
+gbots = g.members.filter(m=>m.bot).size;
+groles = g.roles.map(r=> {return r.name});
+let serv = new Discord.RichEmbed()
+.setAuthor(gname,gimg)
+.setThumbnail(gimg)
+.addField('Server bots',gbots)
+.addField('Server Member Count',gmemb = g.members.size)
+.setColor('RANDOM')
+      message.channel.sendEmbed(serv);
+}) 
+}
+});
 
 //newcode
 
